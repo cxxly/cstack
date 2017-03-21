@@ -51,7 +51,7 @@ public class DeploymentAspect
     private MessageService messageService;
 
     // Before methods
-    @Before("execution(* DeploymentService.create(..))")
+    @Before("execution(* cn.org.once.cstack.service.DeploymentService.create(..))")
     public void beforeDeployment(JoinPoint joinPoint)
         throws MonitorException {
         try {
@@ -75,7 +75,7 @@ public class DeploymentAspect
         }
     }
 
-    @AfterReturning(pointcut = "execution(* DeploymentService.create(..))", returning = "result")
+    @AfterReturning(pointcut = "execution(* cn.org.once.cstack.service.DeploymentService.create(..))", returning = "result")
     public void afterReturningDeployment(StaticPart staticPart, Object result)
         throws MonitorException {
         try {

@@ -49,7 +49,7 @@ public class ServerAspect extends CloudUnitAbstractAspect implements Serializabl
 	private MessageService messageService;
 
 	// Before methods
-	@Before("execution(* ServerService.updateType(..))")
+	@Before("execution(* cn.org.once.cstack.ServerService.updateType(..))")
 	public void beforeServer(JoinPoint joinPoint) throws MonitorException, ServiceException {
 
 		Server server = (Server) joinPoint.getArgs()[0];
@@ -68,8 +68,8 @@ public class ServerAspect extends CloudUnitAbstractAspect implements Serializabl
 
 	}
 
-	@AfterReturning(pointcut = "execution(* ServerService.create(..)) "
-			+ "|| execution(* ServerService.updateType(..))", returning = "result")
+	@AfterReturning(pointcut = "execution(* cn.org.once.cstack.ServerService.create(..)) "
+			+ "|| execution(* cn.org.once.cstack.ServerService.updateType(..))", returning = "result")
 	public void afterReturningServer(StaticPart staticPart, Object result) throws MonitorException {
 		try {
 			if (result == null)
@@ -94,7 +94,7 @@ public class ServerAspect extends CloudUnitAbstractAspect implements Serializabl
 		}
 	}
 
-	@AfterThrowing(pointcut = "execution(* ServerService.updateType(..))", throwing = "e")
+	@AfterThrowing(pointcut = "execution(* cn.org.once.cstack.ServerService.updateType(..))", throwing = "e")
 	public void afterThrowingServer(StaticPart staticPart, Exception e) throws ServiceException {
 		User user = this.getAuthentificatedUser();
 		Message message = null;

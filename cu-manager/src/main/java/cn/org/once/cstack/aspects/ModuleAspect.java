@@ -55,8 +55,8 @@ public class ModuleAspect
     @Inject
     private MessageService messageService;
 
-    @Before("execution(* ModuleService.remove(..)) " +
-        "|| execution(* ModuleService.initModule(..))")
+    @Before("execution(* cn.org.once.cstack.service.ModuleService.remove(..)) " +
+        "|| execution(* cn.org.once.cstack.service.ModuleService.initModule(..))")
     public void beforeModule(JoinPoint joinPoint)
         throws MonitorException, ServiceException {
 
@@ -80,8 +80,8 @@ public class ModuleAspect
 
     }
 
-    @AfterReturning(pointcut = "execution(* ModuleService.remove(..)) " +
-        "&& execution(* ModuleService.initModule(..))",
+    @AfterReturning(pointcut = "execution(* cn.org.once.cstack.service.ModuleService.remove(..)) " +
+        "&& execution(* cn.org.once.cstack.service.ModuleService.initModule(..))",
         returning = "result")
     public void afterReturningModule(StaticPart staticPart, Object result)
         throws MonitorException {
@@ -115,8 +115,8 @@ public class ModuleAspect
         }
     }
 
-    @AfterThrowing(pointcut = "execution(* ModuleService.remove(..)) " +
-        "|| execution(* ModuleService.initModule(..))",
+    @AfterThrowing(pointcut = "execution(* cn.org.once.cstack.service.ModuleService.remove(..)) " +
+        "|| execution(* cn.org.once.cstack.service.ModuleService.initModule(..))",
         throwing = "e")
     public void afterThrowingModule(StaticPart staticPart,
                                     Exception e)

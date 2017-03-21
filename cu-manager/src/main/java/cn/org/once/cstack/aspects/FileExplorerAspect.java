@@ -38,8 +38,8 @@ public class FileExplorerAspect extends CloudUnitAbstractAspect implements Seria
 	@Inject
 	private MessageService messageService;
 
-	@AfterReturning("execution(* FileService.deleteFilesFromContainer(..))"
-			+ " || execution(* FileService.sendFileToContainer(..))")
+	@AfterReturning("execution(* cn.org.once.cstack.service.FileService.deleteFilesFromContainer(..))"
+			+ " || execution(* cn.org.once.cstack.service.FileService.sendFileToContainer(..))")
 	public void afterReturningFileExplorer(JoinPoint joinPoint) throws ServiceException {
 		Message message = new Message();
 		User user = getAuthentificatedUser();

@@ -34,7 +34,7 @@ import org.springframework.stereotype.Component;
 public class JsonInputLoggerAspect {
 
     // Before methods
-    @Before("execution(* cn.org.once.cstack.controller.*.*(JsonInput))")
+    @Before("execution(* cn.org.once.cstack.controller.*.*(cn.org.once.cstack.dto.JsonInput))")
     public void traceAll(JoinPoint joinPoint) {
         Logger logger = LoggerFactory.getLogger(joinPoint.getClass());
         logger.debug(joinPoint.getArgs()[0].toString());
