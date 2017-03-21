@@ -9,8 +9,8 @@
     <url>https://github.com/treeptik/cloudunit</url>
 
     <parent>
-        <groupId>fr.treeptik</groupId>
-        <artifactId>cloudunit</artifactId>
+        <groupId>cn.org.once</groupId>
+        <artifactId>cstack</artifactId>
         <version>1.9</version>
     </parent>
 
@@ -44,7 +44,7 @@
     <dependencies>
 
         <dependency>
-            <groupId>fr.treeptik</groupId>
+            <groupId>cn.org.once</groupId>
             <artifactId>cu-core</artifactId>
             <version>${project.version}</version>
         </dependency>

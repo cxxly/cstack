@@ -22,7 +22,7 @@
         </encoder>
     </appender>
 
-    <logger name="fr.treeptik" level="info"/>
+    <logger name="cn.org.once.cstack" level="info"/>
     <logger name="org.springframework" level="warn"/>
     <logger name="net.sf.ehcache" level="error"/>
 

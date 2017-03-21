@@ -21,12 +21,12 @@
 		</encoder>
 	</appender>
 
-	<logger name="fr.treeptik.cloudunit.controller" level="debug" />
-	<logger name="fr.treeptik.cloudunit.service.impl.ApplicationServiceImpl" level="debug" />
-    <logger name="fr.treeptik.cloudunit.service.impl.ServerServiceImpl" level="debug" />
-    <logger name="fr.treeptik.cloudunit.service.impl.ModuleServiceImpl" level="debug" />
-	<logger name="fr.treeptik.cloudunit.service.impl.FileServiceImpl" level="debug" />
-	<logger name="fr.treeptik.cloudunit.service.impl.HookServiceImpl" level="debug" />
+	<logger name="cn.org.once.cstack.controller" level="debug" />
+	<logger name="cn.org.once.cstack.service.impl.ApplicationServiceImpl" level="debug" />
+    <logger name="cn.org.once.cstack.service.impl.ServerServiceImpl" level="debug" />
+    <logger name="cn.org.once.cstack.service.impl.ModuleServiceImpl" level="debug" />
+	<logger name="cn.org.once.cstack.service.impl.FileServiceImpl" level="debug" />
+	<logger name="cn.org.once.cstack.service.impl.HookServiceImpl" level="debug" />
 
 	<logger name="org.springframework" level="info" />
 	<!--

@@ -25,7 +25,7 @@
     </appender>
 
 
-    <logger name="fr.treeptik" level="info"/>
+    <logger name="cn.org.once.cstack" level="info"/>
 
     <root level="info">
         <appender-ref ref="console"/>

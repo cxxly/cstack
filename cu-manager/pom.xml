@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>fr.treeptik</groupId>
-		<artifactId>cloudunit</artifactId>
+		<groupId>cn.org.once</groupId>
+		<artifactId>cstack</artifactId>
 		<version>1.9</version>
 	</parent>
 	<artifactId>cu-manager</artifactId>
@@ -88,13 +88,13 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>fr.treeptik</groupId>
+			<groupId>cn.org.once</groupId>
 			<artifactId>cu-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>fr.treeptik</groupId>
+			<groupId>cn.org.once</groupId>
 			<artifactId>cu-docker-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
