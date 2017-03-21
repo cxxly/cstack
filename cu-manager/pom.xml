@@ -609,7 +609,7 @@
 			                <goal>get</goal>
 			            </goals>
 			            <configuration>
-			                <artifact>fr.treeptik:cu-cli:${project.version}</artifact>
+			                <artifact>cn.org.once:cu-cli:${project.version}</artifact>
 			                <transitive>false</transitive>
 			                <destination>${project.build.directory}/${project.build.finalName}/resources/CloudUnitCLI.jar</destination>
 			            </configuration>
