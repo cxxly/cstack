@@ -40,7 +40,11 @@
 
 # IntelliJ
 /out/
-
+# idea appending
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
