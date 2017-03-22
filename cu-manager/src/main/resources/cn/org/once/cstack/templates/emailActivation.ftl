@@ -26,7 +26,7 @@
                             <tbody>
                             <tr>
                                 <td style="text-align: left; color: #505c64; font-weight: bold; font-size: 18px;">
-                                    <img src="http://treeptik.fr/medias/logo-cloudunit.png" height="24px"
+                                    <img src="http://treeptik.fr/medias/logo-AppBox.jpg" height="24px"
                                          alt="Logo de CloudUnit"> CloudUnit
                                 </td>
                             </tr>
