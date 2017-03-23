@@ -22,19 +22,6 @@
 function check-env {
   if [ -f .env ]; then
     source .env
-    if [ -n "$SILENT_INSTALL" ] || [ "$SILENT_INSTALL" = "no" ]; then
-      echo "env File already exist would you like to use $CU_DOMAIN as domain name ? [y/n]"
-      if [ "$1" != "-y" ]; then
-          read PROD_ASW
-          if [ "$PROD_ASW" != "y" ] && [ "$PROD_ASW" != "n" ]; then
-              echo "Entrer y ou n!"
-              exit 1
-          elif [ "$PROD_ASW" = "n" ]; then
-              rm .env
-              generate-env
-          fi
-      fi
-    fi
   else
     generate-env
   fi
