@@ -9,7 +9,7 @@ else
    export GIT_BRANCH=$1
 fi
 
-export CU_USER=admin
+export CU_USER=admincu
 export CU_HOME=/home/$CU_USER/cstack
 export CU_INSTALL_DIR=$CU_HOME/cu-production
 
@@ -70,7 +70,7 @@ check_git_branch() {
     fi
 
     BRANCH_EXIST=$(git ls-remote --heads https://github.com/oncecloud/cstack $GIT_BRANCH)
-    echo "git ls-remote --heads https://github.com/Treeptik/cloudunit $GIT_BRANCH"
+    echo "git ls-remote --heads https://github.com/oncelcoud/cstack $GIT_BRANCH"
     if [ ! "$BRANCH_EXIST" ];
       then
         echo "The branch $1 is not valid. Please choose one the following branches: "
