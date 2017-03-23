@@ -39,7 +39,7 @@ install_docker() {
 
 generate_certs() {
   service docker stop
-  sh /home/"$CU_USER"/cloudunit/cu-production/generate-certs.sh
+  sh /home/"$CU_USER"/cstack/cu-production/generate-certs.sh
   if [ "$distribution" = "Ubuntu" ]; then
     cp -f $CU_INSTALL_DIR/files/docker.service /etc/default/docker
   else
@@ -109,7 +109,7 @@ install_dependencies() {
 }
 
 clone_project() {
-    # CLONE CLOUDUNIT
+    # CLONE cstack
     ls /home
     cd /home/$CU_USER && git clone https://github.com/oncecloud/cstack.git -b $GIT_BRANCH
     chown -R $CU_USER:$CU_USER /home/$CU_USER
@@ -138,15 +138,15 @@ install_log_rotation() {
 
 install_cron() {
     # Install cron restart
-    mkdir -p /home/"$CU_USER"/.cloudunit
-    cp $CU_INSTALL_DIR/files/cron.sh /home/"$CU_USER"/.cloudunit/cron.sh
-    echo "*/3 * * * * $CU_USER /home/"$CU_USER"/.cloudunit/cron.sh" >> /etc/crontab
-    chmod +x /home/"$CU_USER"/.cloudunit/cron.sh
+    mkdir -p /home/"$CU_USER"/.cstack
+    cp $CU_INSTALL_DIR/files/cron.sh /home/"$CU_USER"/.cstack/cron.sh
+    echo "*/3 * * * * $CU_USER /home/"$CU_USER"/.cstack/cron.sh" >> /etc/crontab
+    chmod +x /home/"$CU_USER"/.cstack/cron.sh
 }
 
 override_rights() {
     chown -R $CU_USER /home/"$CU_USER"/
-    chown -R $CU_USER /home/"$CU_USER"/.cloudunit
+    chown -R $CU_USER /home/"$CU_USER"/.cstack
 }
 
 add_user_to_sudoers() {
@@ -201,7 +201,7 @@ question_pull_or_build() {
     elif [ "$PUSHPULL" = "build" ]; then
       logo_building_cloudunit
       echo "image have been builded"
-      cd /home/$CU_USER/cloudunit/cu-services && ./build-services.sh all
+      cd /home/$CU_USER/cstack/cu-services && ./build-services.sh all
     elif [ "$PUSHPULL" = "continue" ]; then
       echo "No action. We will use current images"
     elif [ -n "$PUSHPULL" ]; then
@@ -213,11 +213,11 @@ question_pull_or_build() {
 }
 
 logo_building_cloudunit() {
- echo "Building CloudUnit..."
+ echo "Building cstack..."
 }
 
 logo_pulling_dockerhub() {
-echo "Pulling CloudUnit..."
+echo "Pulling cstack..."
 }
 
 #
@@ -265,7 +265,7 @@ question_pull_or_build
 override_rights
 add_user_to_sudoers
 
-cd /home/${CU_USER}/cloudunit/cu-compose
+cd /home/${CU_USER}/cstack/cu-compose
 su $CU_USER -c "/bin/bash cu-docker-compose.sh with-elk"
 
 echo "  ____ _                 _ _   _       _ _   "
