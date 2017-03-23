@@ -1,6 +1,5 @@
 ### CloudUnit ###
 .bundle
-.env
 
 # Created by https://www.gitignore.io/api/eclipse,java,node,bower,grunt,intellij,vagrant,windows,macos,linux,sublimetext,webstorm,netbeans,sass,maven,gradle
 
