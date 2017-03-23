@@ -9,7 +9,6 @@ services:
       command: redis-server --appendonly yes
       volumes:
         - /etc/localtime:/etc/localtime:ro
-        - /etc/timezone:/etc/timezone:ro
         - redis-data:/data
       labels:
         - "traefik.enable=false"
@@ -26,7 +25,6 @@ services:
       volumes:
         - mysqldata:/var/lib/mysql
         - /etc/localtime:/etc/localtime:ro
-        - /etc/timezone:/etc/timezone:ro
       labels:
         - "traefik.enable=false"
 
@@ -45,7 +43,6 @@ services:
         - /sys:/sys:ro
         - /var/lib/docker:/var/lib/docker:ro
         - /etc/localtime:/etc/localtime:ro
-        - /etc/timezone:/etc/timezone:ro
       command: --housekeeping_interval=5s
       labels:
         - "traefik.enable=false"
@@ -56,7 +53,6 @@ services:
       image: gitlab/gitlab-ce:8.14.5-ce.0
       volumes:
         - /etc/localtime:/etc/localtime:ro
-        - /etc/timezone:/etc/timezone:ro
         - gitlab-config:/etc/gitlab
         - gitlab-logs:/var/log/gitlab
         - gitlab-data:/var/opt/gitlab
