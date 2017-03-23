@@ -63,50 +63,54 @@
                     <img class="logo" src="styles/images/logo-AppBox.jpg"></a>
             </h1>
             <ul class="primary-links">
-                <li><a ui-sref="dashboard">Dashboard</a></li>
-                <li class="disabled"><a ui-sref="snapshots">App Templates</a></li>
-                <li><a ui-sref="mainTimeline">Messages</a></li>
-                <li>
-                    <div class="dropdown" dropdown>
-                        <a class="dropdown-toggle"
-                           dropdown-toggle> Scripting
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a ui-sref="scriptingPlay">
-                                    Play Script
-                                </a>
-                            </li>
-                            <li>
-                                <a ui-sref="scriptingManage">
-                                    Manage Script
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a ui-sref="editVolume">Volumes</a></li>
-                <li><a ui-sref="monitoring">Monitoring</a></li>
-                <li><a ui-sref="homepage">Portal</a></li>
-                <li class="app-bar-cli">
-                    <div class="dropdown" dropdown>
-                        <a class="dropdown-toggle"
-                           dropdown-toggle> CLI
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="/resources/CloudUnitCLI.jar" target="_blank">
-                                    Download Jar
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/Treeptik/cloudunit-cli" target="_blank">
-                                    Documentation on Github
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                <li><a ui-sref="dashboard">应用部署</a></li>
+                <li><a href = "http://{{main.friends.gitlab}}" target="_blank">源码管理</a></li>
+                <li><a href = "http://{{main.friends.jekins}}" target="_blank">持续集成</a></li>
+                <li><a href = "https://{{main.friends.kibana}}" target="_blank">集群监控</a></li>
+                <li><a href = "http://{{main.friends.nexus}}" target="_blank">私有仓库</a></li>
+                <!--<li class="disabled"><a ui-sref="snapshots">App Templates</a></li>-->
+                <!--<li><a ui-sref="mainTimeline">Messages</a></li>-->
+                <!--<li>-->
+                    <!--<div class="dropdown" dropdown>-->
+                        <!--<a class="dropdown-toggle"-->
+                           <!--dropdown-toggle> Scripting-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu" role="menu">-->
+                            <!--<li>-->
+                                <!--<a ui-sref="scriptingPlay">-->
+                                    <!--Play Script-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a ui-sref="scriptingManage">-->
+                                    <!--Manage Script-->
+                                <!--</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<li><a ui-sref="editVolume">Volumes</a></li>-->
+                <!--<li><a ui-sref="monitoring">Monitoring</a></li>-->
+                <!--<li><a ui-sref="homepage">Portal</a></li>-->
+                <!--<li class="app-bar-cli">-->
+                    <!--<div class="dropdown" dropdown>-->
+                        <!--<a class="dropdown-toggle"-->
+                           <!--dropdown-toggle> CLI-->
+                        <!--</a>-->
+                        <!--<ul class="dropdown-menu" role="menu">-->
+                            <!--<li>-->
+                                <!--<a href="/resources/CloudUnitCLI.jar" target="_blank">-->
+                                    <!--Download Jar-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="https://github.com/Treeptik/cloudunit-cli" target="_blank">-->
+                                    <!--Documentation on Github-->
+                                <!--</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</li>-->
             </ul>
         </div>
         <div class="app-bar-icons">
