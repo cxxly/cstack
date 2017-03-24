@@ -26,17 +26,15 @@
 angular.module('webuiApp')
     .filter('appByServerImage', function () {
         return function (input, serverImageName) {
-            if(serverImageName) {
-                var res = [];
-                input.forEach(function(element, index) {
-                    if(element.servers) {
-                        if(element.server.image.prefixEnv === serverImageName) {
-                            res.push(element);
-                        }
+            if (serverImageName == '' || serverImageName == 'All') return input;
+            var res = [];
+            input.forEach(function(element, index) {
+                if(element.server) {
+                    if(element.server.image.prefixEnv === serverImageName || element.status == serverImageName) {
+                        res.push(element);
                     }
-                });
-                return res;
-            }
-            return input;
+                }
+            });
+            return res;
         };
     });

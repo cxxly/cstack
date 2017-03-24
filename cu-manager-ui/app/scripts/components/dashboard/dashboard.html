@@ -62,25 +62,25 @@
               <ul class="dropdown-menu" role="menu" aria-label="dLabel">
                 <li>
                   <a ng-href=""
-                     data-ng-click="dashboard.selectedItem = 'all'; dashboard.search = '' ">
+                     data-ng-click="dashboard.selectedItem = 'All'; dashboard.search = '' ">
                     All
                   </a>
                 </li>
                 <li>
                   <a ng-href=""
-                     data-ng-click="dashboard.selectedItem = 'Start'; dashboard.search = 'START' ">
+                     data-ng-click="dashboard.selectedItem = 'START'; dashboard.search = 'START' ">
                     Start
                   </a>
                 </li>
                 <li>
                   <a ng-href=""
-                     data-ng-click="dashboard.selectedItem = 'Stop'; dashboard.search = 'STOP' ">
+                     data-ng-click="dashboard.selectedItem = 'STOP'; dashboard.search = 'STOP' ">
                     Stop
                   </a>
                 </li>
                 <li>
                   <a ng-href=""
-                     data-ng-click="dashboard.selectedItem = 'Error'; dashboard.search = 'FAIL' ">
+                     data-ng-click="dashboard.selectedItem = 'ERROR'; dashboard.search = 'FAIL' ">
                     Error
                   </a>
                 </li>
@@ -165,7 +165,7 @@
              ng-class="{'card': dashboard.selectedDisplayStyle == 'Grid',
               'smaller': dashboard.selectedDisplayStyle == 'Grid',
               'list': dashboard.selectedDisplayStyle == 'List'}"
-             data-ng-repeat="application in dashboard.applications | orderBy:'id'  | filter:{displayName: searchText} | appByServerImage: dashboard.selectedServer track by $index">
+             data-ng-repeat="application in dashboard.applications | orderBy:'id'  | filter:{displayName: searchText} | appByServerImage: dashboard.selectedServer | appByServerImage: dashboard.selectedItem track by $index">
           <div class="content">
             <h3 class="title">
               {{application.displayName}}
