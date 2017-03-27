@@ -43,7 +43,7 @@ services:
           - "CU_SONAR_DOMAIN=${CU_SONAR_DOMAIN}"
           - "CU_LETSCHAT_DOMAIN=${CU_LETSCHAT_DOMAIN}"
       labels:
-          - "traefik.frontend.entryPoints=https"
+          - "traefik.frontend.entryPoints=http"
           - "traefik.backend=manager"
           - "traefik.port=8080"
           - "traefik.frontend.rule=Host:${CU_MANAGER_DOMAIN}"
@@ -82,7 +82,7 @@ services:
         GITLAB_OMNIBUS_CONFIG: |
                external_url 'https://${CU_GITLAB_DOMAIN}'
       labels:
-          - "traefik.frontend.entryPoints=https"
+          - "traefik.frontend.entryPoints=http"
           - "traefik.backend=gitlab"
           - "traefik.port=443"
           - "traefik.frontend.rule=Host:${CU_GITLAB_DOMAIN}"
@@ -97,7 +97,7 @@ services:
       environment:
           - "TZ=${TZ}"
       labels:
-          - "traefik.frontend.entryPoints=https"
+          - "traefik.frontend.entryPoints=http"
           - "traefik.backend=jenkins"
           - "traefik.port=8080"
           - "traefik.frontend.rule=Host:${CU_JENKINS_DOMAIN}"
@@ -109,7 +109,7 @@ services:
       - 'sonar-data:/opt/sonarqube/data'
       - 'sonar-extensions:/opt/sonarqube/extensions'
     labels:
-      - "traefik.frontend.entryPoints=https"
+      - "traefik.frontend.entryPoints=http"
       - "traefik.backend=cu-sonar"
       - "traefik.port=9000"
       - "traefik.frontend.rule=Host:sonar.${CU_DOMAIN}"
@@ -126,7 +126,7 @@ services:
         - "JAVA_MIN_MEM=1024m"
         - "JAVA_MAX_MEM=1024m"
       labels:
-        - "traefik.frontend.entryPoints=https"
+        - "traefik.frontend.entryPoints=http"
         - "traefik.backend=cu-nexus"
         - "traefik.port=8081"
         - "traefik.frontend.rule=Host:${CU_NEXUS_DOMAIN}"
