@@ -24,13 +24,14 @@
 
   MainCtrl.$inject = [
     '$rootScope',
+    'HomepageService',
     'UserService',
     '$interval',
     '$state',
     'ApplicationService'
   ];
 
-  function MainCtrl($rootScope, UserService, $interval, $state, ApplicationService) {
+  function MainCtrl($rootScope, HomepageService, UserService, $interval, $state, ApplicationService) {
 
     var vm = this;
     var timer;
@@ -46,6 +47,16 @@
     getUserRole();
     getCUEnv();
     getAbout();
+
+    HomepageService.listFriends()
+        .then(success);
+    function success(friends) {
+        console.log(friends);
+            vm.friends = friends;
+            return vm.friends;
+    }
+
+
 
     $rootScope.$on(':loginSuccess', function() {
       //reset error message

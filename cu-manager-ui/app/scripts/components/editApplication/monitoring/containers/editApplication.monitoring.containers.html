@@ -60,7 +60,7 @@
             <h4>Usage per Core</h4>
             <chartist class="ct-chart ct-double-octave" chartist-data="monitoring.stats.cpuPerCoreUsage"
                       chartist-chart-type="Line"></chartist>
-            <ul class="ct-legend">
+            <ul class="ct-legend" style = "overflow:hidden">
               <li ng-repeat="serie in monitoring.stats.cpuPerCoreUsage.legends" class="ct-series-{{$index}}">{{monitoring.stats.cpuPerCoreUsage.legends[$index]}}</li>
             </ul>
 
