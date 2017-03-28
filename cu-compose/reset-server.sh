@@ -59,6 +59,8 @@ for container in $(docker ps -aq --format '{{.Names}}' --filter "label=origin=ap
   docker volume rm $container
 done
 
+docker rm -f cu-tomcat
+
 echo "*******************************"
 echo -e "Starting..."
 echo "*******************************"
