@@ -1,0 +1,4 @@
+FROM cloudunit/manager:latest
+WORKDIR /opt/tomcat
+EXPOSE 8080
+CMD ["tomcat.sh"]
