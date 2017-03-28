@@ -1,15 +1,13 @@
 FROM ubuntu:14.04
 
-# Passage du syst¨¨me en UTF-8
 RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV MAVEN_HOME /usr/share/maven
-ENV JAVA_HOME /cloudunit/java/jdk1.8.0_25
+ENV JAVA_HOME /cloudunit/java/jdk1.8.0_121
 
-# D¨¦pendances Debian
 RUN apt-get update \
     && apt-get install -y curl \
     && apt-get install -y git \
@@ -18,15 +16,14 @@ RUN apt-get update \
     && apt-get install -y unzip \
         && rm -r /var/lib/apt/lists/*
 
-# Fix pour permettre de tirer correctement certaines d¨¦pendances
 RUN git config --global url."https://".insteadOf git://
 
-RUN wget https://github.com/Treeptik/CloudUnit/releases/download/1.0/apache-maven-3.3.3-bin.tar.gz -O /tmp/apache-maven-3.3.3-bin.tar.gz
-RUN tar -xvf /tmp/apache-maven-3.3.3-bin.tar.gz -C /usr/share && rm /tmp/apache-*
-RUN mv /usr/share/apache-maven-3.3.3 /usr/share/maven && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
+RUN wget mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz -O /tmp/apache-maven-3.3.9-bin.tar.gz
+RUN tar -xvf /tmp/apache-maven-3.3.9-bin.tar.gz -C /usr/share && rm /tmp/apache-*
+RUN mv /usr/share/apache-maven-3.3.9 /usr/share/maven && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
-RUN mkdir -p /cloudunit/java && wget https://github.com/Treeptik/cloudunit/releases/download/1.0/jdk-8u25-linux-x64.tar.gz -O /tmp/jdk-8u25-linux-x64.tar.gz
-RUN tar -xvf /tmp/jdk-8u25-linux-x64.tar.gz -C /cloudunit/java
+RUN mkdir -p /cloudunit/java && wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie"  download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-linux-x64.tar.gz -O /tmp/jdk-8u121-linux-x64.tar.gz
+RUN tar -xvf /tmp/jdk-8u121-linux-x64.tar.gz -C /cloudunit/java
 RUN rm /tmp/jdk-*
 
 RUN mkdir -p /home/cstack/app
@@ -65,7 +62,6 @@ RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.38/bin/apache-tomca
         mv apache-tomcat* ${CATALINA_HOME}
 
 RUN chmod +x ${CATALINA_HOME}/bin/*sh
-
 WORKDIR /opt/tomcat
 RUN rm -rf /opt/tomcat/webapps/*
 RUN cp -rf /home/cstack/app/csatck/cu-manager/target/ROOT.war /opt/tomcat/webapps
