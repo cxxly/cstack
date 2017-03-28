@@ -45,7 +45,7 @@ RUN cd /usr/lib/node_modules/npm \
 && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.move/fs.rename/ ./lib/utils/rename.js
 
 RUN npm install -g grunt grunt-cli bower
-RUN cd /home/cstack/app/cstack/cu-manager-ui && npm install
+RUN cd /home/cstack/app/cstack/cu-manager-ui && npm install --ignore-scripts
 RUN cd /home/cstack/app/cstack/cu-manager-ui && bower --allow-root install
 RUN cd /home/cstack/app/cstack/cu-manager-ui && grunt build -f
 
@@ -64,9 +64,9 @@ RUN wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.38/bin/apache-tomca
 RUN chmod +x ${CATALINA_HOME}/bin/*sh
 WORKDIR /opt/tomcat
 RUN rm -rf /opt/tomcat/webapps/*
-RUN cp -rf /home/cstack/app/csatck/cu-manager/target/ROOT.war /opt/tomcat/webapps
+RUN cp -rf /home/cstack/app/cstack/cu-manager/target/ROOT.war /opt/tomcat/webapps
 RUN ls -la /opt/tomcat/webapps
-RUN unzip /home/csatck/app/csatck/cu-manager/target/ROOT.war -d /opt/tomcat/webapps/ROOT
+RUN unzip /home/cstack/app/cstack/cu-manager/target/ROOT.war -d /opt/tomcat/webapps/ROOT
 RUN cp -rf /home/cstack/app/cstack/cu-manager-ui/dist/* /opt/tomcat/webapps/ROOT
 ADD tomcat.sh $CATALINA_HOME/scripts/tomcat.sh
 RUN chmod +x $CATALINA_HOME/scripts/*
