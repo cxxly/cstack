@@ -49,7 +49,7 @@ services:
           - "traefik.frontend.rule=Host:${CU_MANAGER_DOMAIN}"
 
   cadvisor:
-      container_name: cu-advisor
+      container_name: cu-cadvisor
       image: google/cadvisor:0.14.0
       environment:
           - "TZ=${TZ}"
