@@ -45,7 +45,8 @@ RUN cd /usr/lib/node_modules/npm \
 && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.move/fs.rename/ ./lib/utils/rename.js
 
 RUN npm install -g grunt grunt-cli bower
-RUN cd /home/cstack/app/cstack/cu-manager-ui && npm install --ignore-scripts
+RUN npm config set registry https://registry.npm.taobao.org
+RUN cd /home/cstack/app/cstack/cu-manager-ui && npm install
 RUN cd /home/cstack/app/cstack/cu-manager-ui && bower --allow-root install
 RUN cd /home/cstack/app/cstack/cu-manager-ui && grunt build -f
 
