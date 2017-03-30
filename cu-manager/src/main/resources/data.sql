@@ -727,7 +727,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'johndoe.doe@gmail.com','John',NULL,'Doe','johndoe','admin','cVwsWoHVZ28Qf9fHE0W4Qg==','2013-08-22 09:22:06',1,1),(2,'scott.tiger@gmail.com','scott',NULL,'tiger','scott','user','cVwsWoHVZ28Qf9fHE0W4Qg==','2014-02-22 09:22:06',1,2);
+INSERT INTO `User` VALUES (1,'johndoe.doe@gmail.com','John',NULL,'Doe','johndoe','admin','cVwsWoHVZ28Qf9fHE0W4Qg==','2013-08-22 09:22:06',1,1),(2,'scott.tiger@gmail.com','scott',NULL,'tiger','scott','user','cVwsWoHVZ28Qf9fHE0W4Qg==','2014-02-22 09:22:06',1,2),(3,'admin@otcaix.iscas.ac.cn','Admin',NULL,'Admin','admin','admin','IAbzJQzi7BJ52epoVp0CMw==','2017-03-22 09:22:06',1,1);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
