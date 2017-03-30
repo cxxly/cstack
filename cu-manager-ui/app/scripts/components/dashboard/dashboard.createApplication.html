@@ -22,7 +22,7 @@
           name="createApp.createAppForm"
           novalidate="">
       <div class="input-group stack">
-        <label for="name">App Name</label>
+        <label for="name">应用名</label>
         <input id="name"
                name="name"
                type="text"
@@ -51,7 +51,7 @@
       </div>
 
       <div class="input-group stack">
-        <label for="name">App Server</label>
+        <label for="name">应用 Server</label>
         <selectize config="createApp.selectConfig" optgroups="createApp.group" options='createApp.serverImages' ng-model="createApp.serverImageSelect2"></selectize>
       </div>
       <button id="create-btn"
@@ -60,7 +60,7 @@
               click-once=""
               data-ng-disabled="createApp.notValidated || createApp.createAppForm.name.$error.maxlength || !createApp.serverImageSelect2 || !createApp.applicationName"
               data-ng-click="createApp.createApplication(createApp.applicationName, createApp.serverImageChoice.name)">
-        <span>Create New App</span>
+        <span>创建应用</span>
       </button>
     </form>
 
