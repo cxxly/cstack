@@ -119,3 +119,8 @@ INSERT IGNORE INTO `User` (`id`, `firstName`, `lastName`, `email`, `password`, `
 VALUES
   (2, 'scott', 'tiger', 'scott.tiger@gmail.com', 'cVwsWoHVZ28Qf9fHE0W4Qg==', 2, 1, '2014-02-22 09:22:06', 'scott',
    'user');
+   
+INSERT IGNORE INTO `User` (`id`, `firstName`, `lastName`, `email`, `password`, `role_id`, `status`, `signin`, `login`, `organization`)
+VALUES   
+  (3, 'Admin', 'Admin', 'admin@otcaix.iscas.ac.cn', 'IAbzJQzi7BJ52epoVp0CMw==', 1, 1, '2017-03-22 09:22:06', 'admin',
+   'admin');
