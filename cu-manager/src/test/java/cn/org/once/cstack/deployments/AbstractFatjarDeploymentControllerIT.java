@@ -76,7 +76,7 @@ public abstract class AbstractFatjarDeploymentControllerIT
         applicationName = "App" + new Random().nextInt(100000);
     }
 
-    @Value("{domain:cloudunit.dev}")
+    @Value("${domain:cloudunit.dev}")
     private String domainSuffix;
 
     @Before

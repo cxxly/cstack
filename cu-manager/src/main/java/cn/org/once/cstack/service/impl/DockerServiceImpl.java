@@ -54,7 +54,7 @@ public class DockerServiceImpl implements DockerService {
     @Inject
     private ContainerMapper containerMapper;
 
-    @Value("{domain:cloudunit.dev}")
+    @Value("${domain:cloudunit.dev}")
     private String domainSuffix;
 
     protected String domain;
