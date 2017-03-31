@@ -103,7 +103,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 	@Value("${docker.socket.location}")
 	private String dockerSocketIP;
 
-	@Value("#{systemEnvironment['CU_DOMAIN']}")
+	@Value("{domain:cloudunit.dev}")
 	private String domainSuffix;
 
 	protected String domain;

@@ -74,7 +74,7 @@ public class ServerServiceImpl implements ServerService {
 	@Value("${cloudunit.instance.name}")
 	private String cuInstanceName;
 
-    @Value("#{systemEnvironment['CU_DOMAIN']}")
+    @Value("{domain:cloudunit.dev}")
     private String domainSuffix;
 
     protected String domain;
