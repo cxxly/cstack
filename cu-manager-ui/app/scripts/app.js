@@ -56,7 +56,6 @@
                 // app areas
                 'webuiApp.login',
                 'webuiApp.dashboard',
-                'webuiApp.homepage',
                 'webuiApp.editApplication',
                 'webuiApp.editVolume',
                 'webuiApp.monitoring',
