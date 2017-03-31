@@ -14,27 +14,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/homepage")
 public class HomepageController {
 
-    @Value("#{environment.CU_JENKINS_DOMAIN ?: 'jenkins.cloudunit.dev'}")
+    @Value("${jenkins.domain : jenkins.cloudunit.dev}")
     private String jenkins;
 
-    @Value("#{environment.CU_GITLAB_DOMAIN ?: 'gitlab.cloudunit.dev'}")
+    @Value("${gitlab.domain : gitlab.cloudunit.dev}")
     private String gitlab;
 
-    @Value("#{environment.CU_NEXUS_DOMAIN ?: 'nexus.cloudunit.dev'}")
+    @Value("${nexus.domain : nexus.cloudunit.dev}")
     private String nexus;
 
-    @Value("#{environment.CU_KIBANA_DOMAIN ?: 'kibana.cloudunit.dev'}")
+    @Value("${kibaba.domain : kibana.cloudunit.dev}")
     private String kibana;
 
-    @Value("#{environment.CU_SONAR_DOMAIN ?: 'sonar.cloudunit.dev'}")
+    @Value("${sonar.domain: sonar.cloudunit.dev}")
     private String sonar;
-
-    @Value("#{environment.CU_LETSCHAT_DOMAIN ?: 'letschat.cloudunit.dev'}")
-    private String letschat;
 
     @RequestMapping(value = "/friends", method = RequestMethod.GET)
     public ResponseEntity<?> listFriends() {
-        HomepageResource resource = new HomepageResource(jenkins, gitlab, kibana, nexus, sonar, letschat);
+        HomepageResource resource = new HomepageResource(jenkins, gitlab, kibana, nexus, sonar);
         return ResponseEntity.ok(resource);
     }
 

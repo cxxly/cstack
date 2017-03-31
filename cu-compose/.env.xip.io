@@ -15,5 +15,3 @@ TZ=Europe/Paris
 ELASTICSEARCH_URL=elasticsearch
 MYSQL_DATABASE=cloudunit
 HOSTNAME=$HOSTNAME
-
-CU_COMPOSE_FILES="-f docker-compose.dev.yml"

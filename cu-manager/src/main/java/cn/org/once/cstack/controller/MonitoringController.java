@@ -107,7 +107,7 @@ public class MonitoringController {
 	 * @return
 	 */
 	@RequestMapping("/location")
-	public ResponseEntity<String> getServiceLocation(@Value("#{environment.CU_KIBANA_DOMAIN ?: 'kibana.cloudunit.dev'}") String location) {
+	public ResponseEntity<String> getServiceLocation(@Value("${kibana.domain : kibana.cloudunit.dev}") String location) {
 		if (location != null && !location.startsWith("https")) {
 			location = "https://" + location;
 		}
