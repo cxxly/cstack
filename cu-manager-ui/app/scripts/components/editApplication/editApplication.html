@@ -106,21 +106,21 @@
                 <li data-ng-class="{'disabled':editApp.application.status==='STOP' || editApp.application.status==='PENDING'}" >
                   <a id="jmx-tab" ui-sref="editApplication.jmxMonitoringKibana"><span>JMX监控</span></a>
                 </li>
-                <li data-ng-class="{'disabled':editApp.application.status==='STOP' || editApp.application.status==='PENDING' || !editApp.hasTomcatMonitoring}" ng-if="editApp.hasTomcat && editApp.application.deploymentStatus === 'ALREADY_DEPLOYED'">
-                  <a class="hint-disabled-parent" id="monitoring-tab" target="_blank" ng-href="http://{{ editApp.application.location }}/monitoring">
-                    <span>Application</span>
-                  </a>
-                </li>
-                <li data-ng-class="{'disabled':editApp.application.status==='STOP' || editApp.application.status==='PENDING' || !editApp.hasTomcatMonitoring}" ng-if="editApp.hasTomcat && editApp.application.deploymentStatus === 'ALREADY_DEPLOYED'">
-                  <a class="hint-disabled-parent" id="monitoring-tab" target="_blank" ng-href="http://{{ editApp.application.location }}/monitoring?part=mbeans">
-                    <span>MBEANS</span>
-                  </a>
-                </li>
-                <li data-ng-class="{'disabled':editApp.application.status==='STOP' || editApp.application.status==='PENDING' || !editApp.hasTomcatMonitoring}" ng-if="editApp.hasTomcat && editApp.application.deploymentStatus === 'ALREADY_DEPLOYED'">
-                  <a class="hint-disabled-parent" id="monitoring-tab" target="_blank" ng-href="http://{{ editApp.application.location }}/monitoring?part=sessions">
-                    <span>SESSIONS</span>
-                  </a>
-                </li>
+                <!--<li data-ng-class="{'disabled':editApp.application.status==='STOP' || editApp.application.status==='PENDING' || !editApp.hasTomcatMonitoring}" ng-if="editApp.hasTomcat && editApp.application.deploymentStatus === 'ALREADY_DEPLOYED'">-->
+                  <!--<a class="hint-disabled-parent" id="monitoring-tab" target="_blank" ng-href="http://{{ editApp.application.location }}/monitoring">-->
+                    <!--<span>Application</span>-->
+                  <!--</a>-->
+                <!--</li>-->
+                <!--<li data-ng-class="{'disabled':editApp.application.status==='STOP' || editApp.application.status==='PENDING' || !editApp.hasTomcatMonitoring}" ng-if="editApp.hasTomcat && editApp.application.deploymentStatus === 'ALREADY_DEPLOYED'">-->
+                  <!--<a class="hint-disabled-parent" id="monitoring-tab" target="_blank" ng-href="http://{{ editApp.application.location }}/monitoring?part=mbeans">-->
+                    <!--<span>MBEANS</span>-->
+                  <!--</a>-->
+                <!--</li>-->
+                <!--<li data-ng-class="{'disabled':editApp.application.status==='STOP' || editApp.application.status==='PENDING' || !editApp.hasTomcatMonitoring}" ng-if="editApp.hasTomcat && editApp.application.deploymentStatus === 'ALREADY_DEPLOYED'">-->
+                  <!--<a class="hint-disabled-parent" id="monitoring-tab" target="_blank" ng-href="http://{{ editApp.application.location }}/monitoring?part=sessions">-->
+                    <!--<span>SESSIONS</span>-->
+                  <!--</a>-->
+                <!--</li>-->
               </ul>
             </div>
             
