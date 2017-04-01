@@ -28,6 +28,7 @@ import cn.org.once.cstack.utils.AlphaNumericsCharactersCheckUtils;
 import cn.org.once.cstack.utils.NamingUtils;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.beans.factory.annotation.Value;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
@@ -78,8 +79,8 @@ public class Application implements Serializable {
 
 	private String deploymentStatus;
 
-	public String getLocation(){
-		String domain = NamingUtils.getCloudUnitDomain(System.getenv("CU_DOMAIN"));
+	public String getLocation(@Value("${domain:133.133.135.25.xip.io}") String cu_domain) {
+		String domain = NamingUtils.getCloudUnitDomain(cu_domain);
         return NamingUtils.getContainerName(name, null, user.getLogin()) + domain;
 	}
 
