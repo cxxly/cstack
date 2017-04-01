@@ -86,7 +86,7 @@ services:
 
   nexus:
       container_name: cu-nexus
-      image: sonatype/nexus3:3.2.0
+      image: sonatype/nexus:2.14.3
       ports:
         - "9091:8081"
         - "8123:8123"
