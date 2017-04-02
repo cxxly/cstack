@@ -93,13 +93,6 @@
     });
 
     // CALLBACKS
-    uploader.onAfterAddingFile = function (fileItem) {
-       vm.errors.fileTypeError = false;
-       vm.showMeta = true;
-       if (uploader.queue.length > 1) {
-    	   uploader.queue.shift();
-       }
-    };
 
     uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
       if (filter.name === 'extensionFilter') {
@@ -114,6 +107,9 @@
     uploader.onAfterAddingFile = function (fileItem) {
       vm.errors.fileTypeError = false;
       vm.showMeta = true;
+      if (uploader.queue.length > 1) {
+          	   uploader.queue.shift();
+      }
     };
 
 
