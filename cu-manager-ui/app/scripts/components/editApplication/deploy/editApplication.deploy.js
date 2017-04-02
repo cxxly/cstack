@@ -70,7 +70,7 @@
     uploader = $scope.uploader = new FileUploader({
       url: 'application/' + $stateParams.name + '/deploy',
       removeAfterUpload: true,
-      queueLimit: 1
+      queueLimit: 2
     });
 
 
@@ -93,6 +93,13 @@
     });
 
     // CALLBACKS
+    uploader.onAfterAddingFile = function (fileItem) {
+       vm.errors.fileTypeError = false;
+       vm.showMeta = true;
+       if (uploader.queue.length > 1) {
+    	   uploader.queue.shift();
+       }
+    };
 
     uploader.onWhenAddingFileFailed = function (item /*{File|FileLikeObject}*/, filter, options) {
       if (filter.name === 'extensionFilter') {
@@ -103,6 +110,7 @@
         vm.errors.sizeError = true;
       }
     };
+
     uploader.onAfterAddingFile = function (fileItem) {
       vm.errors.fileTypeError = false;
       vm.showMeta = true;
