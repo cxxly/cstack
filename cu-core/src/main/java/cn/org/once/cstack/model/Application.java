@@ -79,8 +79,8 @@ public class Application implements Serializable {
 
 	private String deploymentStatus;
 
-	public String getLocation(@Value("${domain:133.133.135.25.xip.io}") String cu_domain) {
-		String domain = NamingUtils.getCloudUnitDomain(cu_domain);
+	public String getLocation() {
+		String domain = NamingUtils.getCloudUnitDomain(System.getenv("CU_DOMAIN"));
         return NamingUtils.getContainerName(name, null, user.getLogin()) + domain;
 	}
 
