@@ -74,7 +74,7 @@ public class NamingUtils {
      */
     public static String getCloudUnitDomain(String input) {
         if (input == null || input.isEmpty()) {
-            return "xip.io";
+            return ".cloudunit.dev";
         } else {
             if (!input.startsWith(".")) {
                 input = "." + input;

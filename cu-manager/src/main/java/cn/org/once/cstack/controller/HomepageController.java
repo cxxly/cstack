@@ -14,19 +14,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/homepage")
 public class HomepageController {
 
-    @Value("${jenkins.domain:jenkins.cloudunit.dev}")
+    @Value("#{environment.CU_JENKINS_DOMAIN}")
     private String jenkins;
 
-    @Value("${gitlab.domain:gitlab.cloudunit.dev}")
+    @Value("#{environment.CU_GITLAB_DOMAIN}")
     private String gitlab;
 
-    @Value("${nexus.domain:nexus.cloudunit.dev}")
+    @Value("#{environment.CU_NEXUS_DOMAIN}")
     private String nexus;
 
-    @Value("${kibana.domain:kibana.cloudunit.dev}")
+    @Value("#{environment.CU_KIBANA_DOMAIN}")
     private String kibana;
 
-    @Value("${sonar.domain:sonar.cloudunit.dev}")
+    @Value("#{environment.CU_SONAR_DOMAIN}")
     private String sonar;
 
     @RequestMapping(value = "/friends", method = RequestMethod.GET)

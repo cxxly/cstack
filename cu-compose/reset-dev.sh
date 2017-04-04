@@ -13,7 +13,11 @@
 
 #!/bin/bash
 
-source .env
+for line in `cat .env | grep =`
+do
+    echo $line
+    export $line
+done
 
 if [ "$CU_COMPOSE_FILES" = "" ]; then
     CU_COMPOSE_FILES="-f docker-compose.elk.yml -f docker-compose.dev.yml"
