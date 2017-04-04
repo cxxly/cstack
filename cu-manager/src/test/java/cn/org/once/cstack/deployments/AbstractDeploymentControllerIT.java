@@ -57,7 +57,7 @@ public abstract class AbstractDeploymentControllerIT {
     private Filter springSecurityFilterChain;
     @Inject
     private UserService userService;
-    @Value("${domain:cloudunit.dev}")
+    @Value("#{environment.CU_DOMAIN}")
     protected String domainSuffix;
 
     public AbstractDeploymentControllerIT() {

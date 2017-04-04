@@ -117,7 +117,7 @@ public abstract class AbstractModuleControllerTestIT extends TestCase {
     private UserService userService;
     @Value("${cloudunit.instance.name}")
     private String cuInstanceName;
-    @Value("${domain:cloudunit.dev}")
+    @Value("#{environment.CU_DOMAIN}")
     private String domainSuffix;
     @Inject
     private CheckBrokerConnectionUtils checkBrokerConnectionUtils;
