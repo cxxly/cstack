@@ -1,9 +1,0 @@
-/root/src/cstack/cu-maven/src/main/java/cn/org/once/cstack/maven/plugin/mojo/CloudUnitDeployMojo.java
-/root/src/cstack/cu-maven/src/main/java/cn/org/once/cstack/maven/plugin/utils/JsonDateDeserializer.java
-/root/src/cstack/cu-maven/src/main/java/cn/org/once/cstack/maven/plugin/utils/UtilFactory.java
-/root/src/cstack/cu-maven/src/main/java/cn/org/once/cstack/maven/plugin/utils/JsonConverter.java
-/root/src/cstack/cu-maven/src/main/java/cn/org/once/cstack/maven/plugin/mojo/CloudunitMojo.java
-/root/src/cstack/cu-maven/src/main/java/cn/org/once/cstack/maven/plugin/utils/RestUtils.java
-/root/src/cstack/cu-maven/src/main/java/cn/org/once/cstack/maven/plugin/handler/ResponseErrorHandler.java
-/root/src/cstack/cu-maven/src/main/java/cn/org/once/cstack/maven/plugin/exception/CheckException.java
-/root/src/cstack/cu-maven/target/generated-sources/plugin/HelpMojo.java
